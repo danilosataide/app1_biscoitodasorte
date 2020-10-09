@@ -18,7 +18,7 @@
         android:fontFamily="sans-serif-black"
         android:text="Abrir outro biscoito da sorte!"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#9962a3"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

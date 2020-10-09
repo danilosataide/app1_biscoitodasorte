@@ -3,6 +3,7 @@ package br.com.danilosataide.biscoitodasorte
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -10,6 +11,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val urlReceita = "https://www.tudoreceitas.com/receita-de-biscoito-da-sorte-chines-3973.html";
+        val urlHistoria = "https://super.abril.com.br/mundo-estranho/como-surgiu-o-costume-dos-biscoitinhos-da-sorte-chineses/";
+
+        //Apresentar uma mensagem ao usuário
+        Toast.makeText(this, "Seja Bem-Vindo!", Toast.LENGTH_SHORT).show()
 
         //Escutando o clique do botão Sair
         btnSair.setOnClickListener {
@@ -37,6 +44,18 @@ class MainActivity : AppCompatActivity() {
 
         btnAbrirBiscoitoSorte.setOnClickListener {
             val mIntent = Intent(this, FraseDaSorteActivity::class.java)
+            startActivity(mIntent)
+        }
+
+        btnHistoria.setOnClickListener {
+            val mIntent = Intent(this, WebActivity::class.java)
+            mIntent.putExtra("INTENT_URL", urlHistoria)
+            startActivity(mIntent)
+        }
+
+        btnReceita.setOnClickListener {
+            val mIntent = Intent(this, WebActivity::class.java)
+            mIntent.putExtra("INTENT_URL", urlReceita)
             startActivity(mIntent)
         }
     }
